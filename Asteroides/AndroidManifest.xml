@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="AcercaDe" android:theme="@style/TemaAsteroides" android:label="@string/game_info"></activity>
+        <activity android:name="AcercaDe" android:theme="@android:style/Theme.Dialog" android:label="@string/game_info"></activity>
     </application>
 
 </manifest>

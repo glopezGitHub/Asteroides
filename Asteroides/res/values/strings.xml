@@ -9,5 +9,7 @@
     <string name="game_configure">Configurar</string>
     <string name="game_info">Acerca De</string>
     <string name="game_exit">Salir</string>
+    <string name="game_menu_configure">Configuración</string>
+    <string name="game_menu_acercade">Acerca de</string>
 
 </resources>

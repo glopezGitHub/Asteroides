@@ -6,6 +6,7 @@ import android.view.Menu;
 
 public class Localizacion extends Activity {
 
+	/*main*/
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

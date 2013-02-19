@@ -28,6 +28,7 @@
 
             <Button
                 android:id="@+id/button2"
+                android:onClick="lanzarPreferencias"
                 android:text="@string/game_configure" />
         </TableRow>
 

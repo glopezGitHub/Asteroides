@@ -21,6 +21,7 @@
     <Button
         style="@style/TextoAsteroides.botones"
         android:id="@+id/button2"
+        android:onClick="lanzarPreferencias"
         android:text="@string/game_configure"
          />
 
@@ -30,6 +31,13 @@
         android:onClick="lanzarAcercaDe"
         android:text="@string/game_info" />
 
+    <Button
+		style="@style/TextoAsteroides.botones"
+        android:id="@+id/button3"
+        android:onClick="lanzarPuntuaciones"
+        android:text="@string/game_puntacion"/>
+    
+    
     <Button
 		style="@style/TextoAsteroides.botones"
         android:id="@+id/button4"

@@ -1,5 +1,8 @@
 package org.example.asteroides;
 
+import org.example.asteroides.interfaces.AlmacenPuntuaciones;
+import org.example.asteroides.puntuaciones.AlmacenPuntuacionesArray;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +16,8 @@ import android.widget.Button;
 public class Localizacion extends Activity {
 
 	Button acercaDe;
-
+	public static AlmacenPuntuaciones almacen= new AlmacenPuntuacionesArray();
+	
 	/* main */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +54,23 @@ public class Localizacion extends Activity {
 		startActivity(i);
 
 	}
+	
+	public void lanzarPreferencias(View view) {
+
+		Intent i = new Intent(this, Preferencias.class);
+
+		startActivity(i);
+
+	}
+	
+	public void lanzarPuntuaciones(View view) {
+		 
+		Intent i = new Intent(this, Puntuaciones.class);
+		 
+		startActivity(i);
+		 
+		}
+
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -57,6 +78,10 @@ public class Localizacion extends Activity {
 		case R.id.acercaDe:
 			lanzarAcercaDe(null);
 			break;
+		case R.id.config:
+			lanzarPreferencias(null);
+            break;
+
 		}
 		return true;
 		/** true -> consumimos el item, no se propaga */

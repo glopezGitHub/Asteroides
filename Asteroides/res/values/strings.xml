@@ -11,5 +11,6 @@
     <string name="game_exit">Salir</string>
     <string name="game_menu_configure">Configuración</string>
     <string name="game_menu_acercade">Acerca de</string>
+    <string name="game_puntacion">Ver Puntuacion</string>
 
 </resources>

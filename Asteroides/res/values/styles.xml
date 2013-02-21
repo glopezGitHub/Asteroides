@@ -20,6 +20,7 @@
     <!--  ASTEROIDES -->
     <!--  THEMAS ASTEROIDES -->
     <style name="TemaAsteroides" parent="@android:style/Theme.NoTitleBar">
+        
     </style>
     
     <!--  STYLES ASTEROIDES -->

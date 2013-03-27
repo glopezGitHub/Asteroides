@@ -24,10 +24,13 @@ public class Splash extends Activity implements LoadingTaskFinishedListener {
 		// Ocultar el titulo
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
+		//Establecemos la ventana de splash
 		setContentView(R.layout.activity_splash);
 
+		//Mostramos el progressBar
 		ProgressBar progressBar = (ProgressBar) findViewById(R.id.activity_splash_progress_bar);
 
+		/*Creamos la tarea*/
 		splashTask = new LoadingTask(progressBar, this).execute();
 	
 	}
@@ -42,7 +45,7 @@ public class Splash extends Activity implements LoadingTaskFinishedListener {
 	}
 
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		
+		/*Si cancelamos antes de que carge hay que cancelar la tarea y finalizar*/
 		if ((keyCode == KeyEvent.KEYCODE_BACK)) {
 			stop = true;
 			splashTask.cancel(true);

@@ -86,4 +86,6 @@ public class Localizacion extends Activity {
 		return true;
 		/** true -> consumimos el item, no se propaga */
 	}
+	
+	
 }

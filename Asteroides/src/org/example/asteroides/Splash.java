@@ -5,17 +5,17 @@ import org.example.task.LoadingTask.LoadingTaskFinishedListener;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Window;
 import android.widget.ProgressBar;
 
 public class Splash extends Activity implements LoadingTaskFinishedListener {
 
-	private long ms = 0;
-	private long splashTime = 2000;
-	private boolean splashActive = true;
-	private boolean paused = false;
-
+	private boolean stop = false;
+	private AsyncTask splashTask =null;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
@@ -28,33 +28,28 @@ public class Splash extends Activity implements LoadingTaskFinishedListener {
 
 		ProgressBar progressBar = (ProgressBar) findViewById(R.id.activity_splash_progress_bar);
 
-		new LoadingTask(progressBar, this).execute(); 
-		
-//		TimerTask task = new TimerTask() {
-//
-//			@Override
-//			public void run() {
-//				// TODO Auto-generated method stub
-//				// ResourceManager
-//
-//				// *Carga de Imagenes Sonidos etc.
-//
-//				finish();
-//				Intent intent = new Intent(Splash.this, Localizacion.class);
-//				startActivity(intent);
-//			}
-//		};
-//
-//		/*Lanza el timer de carga*/
-//		Timer timer = new Timer();
-//		timer.schedule(task, splashTime);
+		splashTask = new LoadingTask(progressBar, this).execute();
+	
 	}
 
 	@Override
 	public void onTaskFinished() {
-		finish();
-		Intent intent = new Intent(Splash.this, Localizacion.class);
-		startActivity(intent);
-		
+		if (!stop) {
+			Intent intent = new Intent(Splash.this, Localizacion.class);
+			startActivity(intent);
+			finish();
+		}
 	}
+
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		
+		if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+			stop = true;
+			splashTask.cancel(true);
+			finish();			
+		}
+
+		return true;
+	}
+
 }

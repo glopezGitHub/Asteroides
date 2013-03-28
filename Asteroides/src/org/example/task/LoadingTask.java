@@ -1,11 +1,16 @@
 package org.example.task;
 
+import or.example.resourceManager.SoundManager;
+
+import org.example.asteroides.R;
+
 import android.os.AsyncTask;
-import android.util.Log;
 import android.widget.ProgressBar;
 
 public class LoadingTask extends AsyncTask<String, Integer, Integer> {
 
+	public final static int LOAD_SOUNDS=1;
+	
 	public interface LoadingTaskFinishedListener {
 		void onTaskFinished(); // If you want to pass something back to the listener add a param to this method
 	}
@@ -47,6 +52,21 @@ public class LoadingTask extends AsyncTask<String, Integer, Integer> {
 		int count = 10;
 		for (int i = 0; i < count&&!isCancelled(); i++) {
 
+			switch (i) {
+			case LOAD_SOUNDS:
+				
+				loadSounds();
+				
+				break;
+
+			default:
+				break;
+			}
+			
+			
+			
+			
+			
 			// Update the progress bar after every step
 			int progress = (int) ((i / (float) count) * 100);
 			publishProgress(progress);
@@ -56,6 +76,14 @@ public class LoadingTask extends AsyncTask<String, Integer, Integer> {
 		}
 	}
 
+	public void loadSounds()
+	{
+		
+		SoundManager.getInstance().addSound(0, R.raw.smash2);
+		
+	}
+	
+	
 	@Override
 	protected void onProgressUpdate(Integer... values) {
 		super.onProgressUpdate(values);

@@ -2,7 +2,7 @@ package org.example.asteroides;
 
 import org.example.asteroides.interfaces.AlmacenPuntuaciones;
 import org.example.asteroides.puntuaciones.AlmacenPuntuacionesArray;
-
+import or.example.resourceManager.SoundManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,13 +26,17 @@ public class Localizacion extends Activity {
 
 		acercaDe = (Button) findViewById(R.id.button4);
 
+		SoundManager.getInstance().playSoundLoop(SoundManager.SOUND_START);
+		
 		acercaDe.setOnClickListener(new OnClickListener() {
-
+		
+		
 			@Override
 			public void onClick(View v) {
 
 				// Finish
 				finish();
+				SoundManager.getInstance().unloadAll();
 
 			}
 		});

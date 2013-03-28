@@ -1,5 +1,7 @@
 package org.example.asteroides;
 
+import or.example.resourceManager.SoundManager;
+
 import org.example.task.LoadingTask;
 import org.example.task.LoadingTask.LoadingTaskFinishedListener;
 
@@ -29,9 +31,11 @@ public class Splash extends Activity implements LoadingTaskFinishedListener {
 
 		//Mostramos el progressBar
 		ProgressBar progressBar = (ProgressBar) findViewById(R.id.activity_splash_progress_bar);
-
+		
 		/*Creamos la tarea*/
 		splashTask = new LoadingTask(progressBar, this).execute();
+
+		SoundManager.getInstance().initSouns(this);
 	
 	}
 

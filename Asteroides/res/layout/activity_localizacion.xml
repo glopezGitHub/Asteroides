@@ -3,11 +3,13 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/degradado"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="30dp"
-    tools:context=".Localizacion"
-    android:background="@drawable/degradado">
+    tools:context=".Localizacion" >
+
+   
 
     <TextView
         android:id="@+id/textView1"
@@ -17,31 +19,30 @@
     <Button
         android:id="@+id/button1"
         style="@style/TextoAsteroides.botones"
+        android:onClick="lanzarJuego"
         android:text="@string/game_play" />
 
     <Button
-        style="@style/TextoAsteroides.botones"
         android:id="@+id/button2"
+        style="@style/TextoAsteroides.botones"
         android:onClick="lanzarPreferencias"
-        android:text="@string/game_configure"
-         />
+        android:text="@string/game_configure" />
 
     <Button
-		style="@style/TextoAsteroides.botones"
         android:id="@+id/button3"
+        style="@style/TextoAsteroides.botones"
         android:onClick="lanzarAcercaDe"
         android:text="@string/game_info" />
 
     <Button
-		style="@style/TextoAsteroides.botones"
         android:id="@+id/button3"
+        style="@style/TextoAsteroides.botones"
         android:onClick="lanzarPuntuaciones"
-        android:text="@string/game_puntacion"/>
-    
-    
+        android:text="@string/game_puntacion" />
+
     <Button
-		style="@style/TextoAsteroides.botones"
         android:id="@+id/button4"
+        style="@style/TextoAsteroides.botones"
         android:text="@string/game_exit" />
 
 </LinearLayout>

@@ -24,7 +24,8 @@
             <Button
                 android:id="@+id/button1"
                 android:layout_height="fill_parent"
-                android:text="@string/game_play" />
+                android:text="@string/game_play"
+                android:onClick="lanzarJuego" />
 
             <Button
                 android:id="@+id/button2"
